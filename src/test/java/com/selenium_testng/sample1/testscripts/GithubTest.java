@@ -36,13 +36,13 @@ public class GithubTest {
     	chromeOptions.addArguments("--headless");
 		DesiredCapabilities capability = DesiredCapabilities.chrome();
 		capability.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-		driver = new ChromeDriver(capability);
-//		try {
-//			driver = new RemoteWebDriver(new URL("http://0.0.0.0:5566/wd/hub"), capability);
-//		} catch (MalformedURLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+//		driver = new ChromeDriver(capability);
+		try {
+			driver = new RemoteWebDriver(new URL("http://0.0.0.0:5566/wd/hub"), capability);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
     @AfterClass
