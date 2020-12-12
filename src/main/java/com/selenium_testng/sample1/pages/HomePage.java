@@ -10,7 +10,7 @@ import io.qameta.allure.Step;
 
 public class HomePage extends AbstractPage<HomePage> {
 
-    @FindBy(className = "h000-mktg")
+    @FindBy(xpath = "/html/body/div[4]/main/div/div[1]/div[1]/div[1]/div/div/div[1]/h1")
     private WebElement slogan;
 
     public HomePage(WebDriver driver) {
