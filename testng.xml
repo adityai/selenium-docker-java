@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main test suite" parallel="tests">
+
+	<test name="ChromeTest">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
+		</classes>
+	</test>
+	<test name="FirefoxTest">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
+		</classes>
+	</test>
+	<test name="OperaTest">
+		<parameter name="browser" value="opera" />
+		<classes>
+			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
+		</classes>
+	</test>
+</suite>
