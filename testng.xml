@@ -33,4 +33,10 @@
 			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
 		</classes>
 	</test>
+ 	<test name="IeTest">
+		<parameter name="browser" value="ie" />
+		<classes>
+			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
+		</classes>
+	</test>
 </suite>

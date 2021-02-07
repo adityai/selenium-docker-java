@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -59,6 +60,10 @@ public class GithubTest {
 			SafariOptions safariOptions = new SafariOptions();
 			EdgeOptions edgeOptions = new EdgeOptions();
 			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), edgeOptions);
+		} else if ("ie".equals(browser)) {
+			InternetExplorerOptions ieOptions = new InternetExplorerOptions();
+			EdgeOptions edgeOptions = new EdgeOptions();
+			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), ieOptions);
 		}
 	}
 
