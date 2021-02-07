@@ -14,10 +14,11 @@
 			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
 		</classes>
 	</test>
-	<test name="OperaTest">
+<!-- 	<test name="OperaTest">
 		<parameter name="browser" value="opera" />
 		<classes>
 			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
 		</classes>
 	</test>
+ -->
 </suite>
