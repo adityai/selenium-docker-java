@@ -41,15 +41,15 @@ public class GithubTest {
 //			capability = DesiredCapabilities.chrome();
 //			capability.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 //			driver = new ChromeDriver(capability);
-			driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), chromeOptions);
+			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), chromeOptions);
 		} else if ("firefox".equals(browser)) {
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
 //			driver = new FirefoxDriver(firefoxOptions);
-			driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), firefoxOptions);
+			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), firefoxOptions);
 		} else if ("opera".equals(browser)) {
 			OperaOptions operaOptions = new OperaOptions();
 //			driver = new OperaDriver(operaOptions);
-			driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), operaOptions);
+			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), operaOptions);
 		}
 	}
 
