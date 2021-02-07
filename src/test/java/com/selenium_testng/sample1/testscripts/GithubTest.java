@@ -66,6 +66,7 @@ public class GithubTest {
 	public void verifyGithubSlogan() {
 		HomePage homePage = new HomePage(driver);
 		homePage.get();
+		System.out.println("----> " + driver.toString());
 		assertThat(homePage.getSloganText()).isEqualTo("Where the world\nbuilds software");
 	}
 }
