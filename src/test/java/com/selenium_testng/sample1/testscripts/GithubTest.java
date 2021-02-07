@@ -12,6 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -50,6 +51,10 @@ public class GithubTest {
 			OperaOptions operaOptions = new OperaOptions();
 //			driver = new OperaDriver(operaOptions);
 			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), operaOptions);
+		} else if ("safari".equals(browser)) {
+			SafariOptions safariOptions = new SafariOptions();
+//			driver = new OperaDriver(operaOptions);
+			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), safariOptions);
 		}
 	}
 

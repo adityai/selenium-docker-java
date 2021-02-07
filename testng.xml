@@ -20,5 +20,11 @@
 			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
 		</classes>
 	</test>
- -->
+-->
+ 	<test name="SafariTest">
+		<parameter name="browser" value="safari" />
+		<classes>
+			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
+		</classes>
+	</test>
 </suite>
