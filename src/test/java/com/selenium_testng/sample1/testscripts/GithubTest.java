@@ -19,6 +19,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.microsoft.edge.seleniumtools.EdgeOptions;
 import com.selenium_testng.sample1.pages.HomePage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -53,8 +54,11 @@ public class GithubTest {
 			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), operaOptions);
 		} else if ("safari".equals(browser)) {
 			SafariOptions safariOptions = new SafariOptions();
-//			driver = new OperaDriver(operaOptions);
 			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), safariOptions);
+		} else if ("edge".equals(browser)) {
+			SafariOptions safariOptions = new SafariOptions();
+			EdgeOptions edgeOptions = new EdgeOptions();
+			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), edgeOptions);
 		}
 	}
 

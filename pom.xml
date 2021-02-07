@@ -22,13 +22,11 @@
 		<aspectj.version>1.9.5</aspectj.version>
 		<assertj-core.version>3.15.0</assertj-core.version>
 		<ngwebdriver.version>1.1.5</ngwebdriver.version>
+		<msedge-selenium-tools-java.version>[3.141.0,)</msedge-selenium-tools-java.version>
 
 		<allure-maven.version>2.10.0</allure-maven.version>
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 
-		<seleniumGrid>false</seleniumGrid>
-		<seleniumGridUrl>http://0.0.0.0:4444/wd/hub</seleniumGridUrl>
-		<seleniumBrowser>chrome</seleniumBrowser>
 	</properties>
 
 	<dependencies>
@@ -46,6 +44,11 @@
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-remote-driver</artifactId>
 			<version>${selenium-remote.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.microsoft.edge</groupId>
+			<artifactId>msedge-selenium-tools-java</artifactId>
+			<version>${msedge-selenium-tools-java.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.paulhammant</groupId>
