@@ -44,6 +44,7 @@ public class GithubTest {
 			capability = DesiredCapabilities.chrome();
 			capability.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 			capability.setCapability("tunnelIdentifier", "BlueShieldCA");
+			capability.setCapability("parentTunnel", "blueshieldca1");
 //			driver = new ChromeDriver(capability);
 			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), capability);
 		} else if ("firefox".equals(browser)) {
