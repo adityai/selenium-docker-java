@@ -41,10 +41,11 @@ public class GithubTest {
 		DesiredCapabilities capability = null;
 		if ("chrome".equals(browser)) {
 			ChromeOptions chromeOptions = new ChromeOptions();
-//			capability = DesiredCapabilities.chrome();
-//			capability.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+			capability = DesiredCapabilities.chrome();
+			capability.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+			capability.setCapability("tunnelIdentifier", "BlueShieldCA");
 //			driver = new ChromeDriver(capability);
-			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), chromeOptions);
+			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), capability);
 		} else if ("firefox".equals(browser)) {
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
 //			driver = new FirefoxDriver(firefoxOptions);
