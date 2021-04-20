@@ -20,7 +20,7 @@ public class HomePage extends AbstractPage<HomePage> {
     @Step("Open the Github homepage")
     @Override
     protected void load() {
-        driver.get("https://github.com");
+        driver.get("https://www.webn52.bsc.bscal.com");
     }
 
     @Override
