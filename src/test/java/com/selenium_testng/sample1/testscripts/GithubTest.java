@@ -10,7 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerOptions;
-import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariOptions;
@@ -41,18 +40,18 @@ public class GithubTest {
 		DesiredCapabilities capability = null;
 		if ("chrome".equals(browser)) {
 			ChromeOptions chromeOptions = new ChromeOptions();
-//			capability = DesiredCapabilities.chrome();
+//			capability = new DesiredCapabilities();
 //			capability.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-//			driver = new ChromeDriver(capability);
+//			driver = new ChromeDriver();
 			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), chromeOptions);
 		} else if ("firefox".equals(browser)) {
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
 //			driver = new FirefoxDriver(firefoxOptions);
 			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), firefoxOptions);
-		} else if ("opera".equals(browser)) {
-			OperaOptions operaOptions = new OperaOptions();
-//			driver = new OperaDriver(operaOptions);
-			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), operaOptions);
+//		} else if ("opera".equals(browser)) {
+//			OperaOptions operaOptions = new OperaOptions();
+////			driver = new OperaDriver(operaOptions);
+//			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), operaOptions);
 		} else if ("safari".equals(browser)) {
 			SafariOptions safariOptions = new SafariOptions();
 			driver = new RemoteWebDriver(new URL(System.getenv("GRID_URL")), safariOptions);
@@ -76,10 +75,7 @@ public class GithubTest {
 		HomePage homePage = new HomePage(driver);
 		homePage.get();
 		System.out.println("----> " + driver.toString());
-		if (driver.toString().contains("Safari")) {
-			assertThat(homePage.getSloganText()).isEqualTo("Where the world builds software");
-		} else {
-			assertThat(homePage.getSloganText()).isEqualTo("Where the world\nbuilds software");
-		}
+
+		assertThat(homePage.getSloganText()).isEqualTo("Build and ship software on a single, collaborative platform");
 	}
 }
