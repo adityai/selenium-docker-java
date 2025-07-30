@@ -4,12 +4,14 @@ services:
   selenium-hub:
     image: selenium/hub:latest
     container_name: selenium-hub
+    platform: linux/amd64
     ports:
       - "4444:4444"
 
   chrome:
     image: selenium/node-chrome:latest
     container_name: chrome
+    platform: linux/amd64
     depends_on:
       - selenium-hub
     environment:
@@ -20,6 +22,7 @@ services:
   firefox:
     image: selenium/node-firefox:latest
     container_name: firefox
+    platform: linux/amd64
     depends_on:
       - selenium-hub
     environment:
@@ -30,6 +33,7 @@ services:
   opera:
     image: selenium/node-opera:latest
     container_name: opera
+    platform: linux/amd64
     depends_on:
       - selenium-hub
     environment:
