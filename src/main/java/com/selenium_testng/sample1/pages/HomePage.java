@@ -10,7 +10,7 @@ import io.qameta.allure.Step;
 
 public class HomePage extends AbstractPage<HomePage> {
 
-    @FindBy(xpath = "/html/body/div[4]/main/div/div[1]/div[1]/div[1]/div/div/div[1]/h1")
+    @FindBy(xpath = "//*[@id=\"hero-section-brand-heading\"]")
     private WebElement slogan;
 
     public HomePage(WebDriver driver) {
@@ -25,7 +25,7 @@ public class HomePage extends AbstractPage<HomePage> {
 
     @Override
     protected void isLoaded() throws Error {
-        assertThat(driver.getTitle()).contains("GitHub: Where the world builds software");
+        assertThat(driver.getTitle()).contains("GitHub · Build and ship software on a single, collaborative platform · GitHub");
     }
 
     @Step("Get slogan text")
