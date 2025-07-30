@@ -1,23 +1,38 @@
-selenium-hub:
-  image: selenium/hub:latest
-  ports:
-    - "4444:4444"
-  expose:
-    - "4444"
+version: "3.8"
 
-selenium-chrome:
-  image: selenium/node-chrome
-  stdin_open: true
-  links:
-    - selenium-hub:hub
+services:
+  selenium-hub:
+    image: selenium/hub:latest
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
 
-selenium-firefox:
-  image: selenium/node-firefox
-  links:
-    - selenium-hub:hub
+  chrome:
+    image: selenium/node-chrome:latest
+    container_name: chrome
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
-selenium-opera:
-  image: selenium/node-opera
-  stdin_open: true
-  links:
-    - selenium-hub:hub
+  firefox:
+    image: selenium/node-firefox:latest
+    container_name: firefox
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
+  opera:
+    image: selenium/node-opera:latest
+    container_name: opera
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
