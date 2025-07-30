@@ -8,20 +8,15 @@
 			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
 		</classes>
 	</test>
+
 	<test name="FirefoxTest">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
 		</classes>
 	</test>
-<!-- 	<test name="OperaTest">
-		<parameter name="browser" value="opera" />
-		<classes>
-			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
-		</classes>
-	</test>
--->
- 	<test name="SafariTest">
+<!--
+	<test name="SafariTest">
 		<parameter name="browser" value="safari" />
 		<classes>
 			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
@@ -39,4 +34,5 @@
 			<class name="com.selenium_testng.sample1.testscripts.GithubTest" />
 		</classes>
 	</test>
+-->	
 </suite>
